@@ -7,6 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+/**
+ * On player leaving the server
+ */
 public class LeaveListener extends MTVListener {
 
     @EventHandler
