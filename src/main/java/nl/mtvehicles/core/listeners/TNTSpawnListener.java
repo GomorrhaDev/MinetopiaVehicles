@@ -19,9 +19,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * On plane dropping a bomb
- */
 public class TNTSpawnListener implements Listener {
 
     private static final int COOLDOWN_TIME = ((int) ConfigModule.defaultConfig.get(DefaultConfig.Option.AIRPLANE_COOLDOWN)) * 1000;

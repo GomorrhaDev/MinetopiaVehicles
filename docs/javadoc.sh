@@ -1,1 +1,0 @@
-/home/gmrrh/.jdks/temurin-21.0.5/bin/javadoc @options @packages
