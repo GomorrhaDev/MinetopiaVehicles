@@ -68,6 +68,10 @@ public enum Language {
      */
     GR("Ελληνική"),
     /**
+     * Hungarian
+     */
+    HU("Magyar"),
+    /**
      * Custom language one can create and use
      */
     CUSTOM("Custom language");
