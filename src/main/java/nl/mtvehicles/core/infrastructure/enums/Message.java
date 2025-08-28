@@ -96,6 +96,7 @@ public enum Message {
     VEHICLE_INFO_MEMBERS("vehicleInfoMembers2"),
     @Deprecated
     VEHICLE_INFO_NO_MEMBERS,
+    VEHICLE_INFO_HEALTH,
     LANGUAGE_HAS_CHANGED,
     USING_PRE_RELEASE,
     NOT_IN_A_GAS_STATION,
@@ -184,7 +185,11 @@ public enum Message {
     FUEL_TOO_HIGH,
     MUST_BE_INTEGER,
     MUST_BE_DOUBLE,
-    MUST_BE_BOOLEAN;
+    MUST_BE_BOOLEAN,
+    USE_NEW_VEHICLE_GIVE,
+    USE_NEW_VEHICLE_BUY,
+    NO_INVENTORY_SPACE,
+    VOUCHER_PERMANENT;
 
     final private String key;
 

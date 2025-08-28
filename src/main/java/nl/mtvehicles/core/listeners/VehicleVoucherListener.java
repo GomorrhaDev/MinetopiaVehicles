@@ -25,34 +25,34 @@ import java.util.HashMap;
  */
 public class VehicleVoucherListener extends MTVListener {
     public static HashMap<Player, String> voucher = new HashMap<>();
-    private Inventory cachedInventory;  // Cache the inventory
+    private static Inventory cachedInventory;  // Cache the inventory
 
     public VehicleVoucherListener(){
         super(new VehicleVoucherEvent());
-        this.cachedInventory = createVoucherInventory();  // Create the inventory when the listener is initialized
+        createVoucherInventory();  // Create the inventory when the listener is initialized
     }
 
-    private Inventory createVoucherInventory() {
+    public static void createVoucherInventory() {
         Inventory inv = Bukkit.createInventory(null, 27, InventoryTitle.VOUCHER_REDEEM_MENU.getStringTitle());
-        MessagesConfig msg = ConfigModule.messagesConfig;
 
         inv.setItem(11, ItemUtils.getMenuItem(
                 "RED_WOOL",
                 "WOOL",
                 (short) 14,
                 1,
-                "&c" + msg.getMessage(Message.CANCEL),
-                "&7" + msg.getMessage(Message.CANCEL_ACTION), "&7" + msg.getMessage(Message.CANCEL_VOUCHER)
+                "&c" + ConfigModule.messagesConfig.getMessage(Message.CANCEL),
+                "&7" + ConfigModule.messagesConfig.getMessage(Message.CANCEL_ACTION), "&7" + ConfigModule.messagesConfig.getMessage(Message.CANCEL_VOUCHER)
         ));
         inv.setItem(15, ItemUtils.getMenuItem(
                 "LIME_WOOL",
                 "WOOL",
                 (short) 5,
                 1,
-                "&a" + msg.getMessage(Message.CONFIRM),
-                "&7" + msg.getMessage(Message.CONFIRM_ACTION), "&7" + msg.getMessage(Message.CONFIRM_VOUCHER)
+                "&a" + ConfigModule.messagesConfig.getMessage(Message.CONFIRM),
+                "&7" + ConfigModule.messagesConfig.getMessage(Message.CONFIRM_ACTION), "&7" + ConfigModule.messagesConfig.getMessage(Message.CONFIRM_VOUCHER)
         ));
-        return inv;
+
+        cachedInventory = inv;
     }
 
     @EventHandler
